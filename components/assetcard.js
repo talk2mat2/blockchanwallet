@@ -17,7 +17,13 @@ const AssetCard = ({ item }) => {
           <Text style={styles.Header}>{item?.item.name?.substring(0, 10)}</Text>
           <Text style={styles.subText}>
             $ {item?.item.current_price?.toFixed(2)}{" "}
-            <Text style={{ marginLeft: 20,color:item?.item?.price_change_percentage_24h>0?"green":"red" }}>
+            <Text
+              style={{
+                marginLeft: 20,
+                color:
+                  item?.item?.price_change_percentage_24h > 0 ? "green" : "red",
+              }}
+            >
               {item?.item?.price_change_percentage_24h?.toFixed(2)}%
             </Text>
           </Text>
@@ -25,10 +31,10 @@ const AssetCard = ({ item }) => {
       </View>
       <View>
         <Text style={{ ...styles.Header, textAlign: "right" }}>
-          0.1589 {item?.item?.symbol}
+          2 {item?.item?.symbol}
         </Text>
         <Text style={{ ...styles.subText, textAlign: "right" }}>
-          $7,2345,90
+          $ {(item?.item.current_price * 2)?.toFixed(2)}
         </Text>
       </View>
     </View>
